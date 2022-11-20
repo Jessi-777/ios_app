@@ -2,7 +2,7 @@ import React from "react";
 import { View, TextInput } from "react-native";
 import Text from "@kaloraat/react-native-text";
 
-const UserInput = ({name}) => {
+const UserInput = ({name, value, setValue }) => {
     return (
         <View style={{ marginHorizontal: 24 }}>
             <Text semi >{ name }</Text>
@@ -13,8 +13,10 @@ const UserInput = ({name}) => {
                   borderBottomColor: '#737373',
                   marginBottom: 30,
                 }}
-                onTextChange={(text) => console.log(text)}
+                value={value}
+                onChangeText={(text) => setValue(text)}
             />
+           
         </View>
     
     );
